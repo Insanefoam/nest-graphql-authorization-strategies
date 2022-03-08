@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: String!
+  name: String!
+}
+
+type Product {
+  id: String!
+  title: String!
+  price: Float!
+}
+
+type UsersQueries {
+  getProducts: [Product!]!
+}
+
+type AdminsNestedField {
+  secretField: String!
+}
+
+type AdminsQueries {
+  getProducts: [Product!]!
+  getUsers: [User!]!
+  nestedField(someArg: String): AdminsNestedField!
+}
+
+type UsersProductsMutations {
+  makeProductFavorite(id: String!): Product!
+}
+
+type UsersMutations {
+  products: UsersProductsMutations!
+}
+
+type Query {
+  users: UsersQueries!
+  admins: AdminsQueries!
+}
+
+type Mutation {
+  users: UsersMutations!
+}
